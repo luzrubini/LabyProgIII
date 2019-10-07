@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Primer Parcial</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- AGREGAR ARCHIVOS JS AQUI -->
+  <script src="FRONTEND/ajax.js"></script>
+  <script src="FRONTEND/Producto.js"></script>
+  <script src="FRONTEND/Televisor.js"></script>
+  <script src="FRONTEND/Manejadora.js"></script>
+</head>
+
+<body style="background-color:darkgrey">
+ <br>
+  <div class="container" style="background-color:lightblue">
+    <br>
+    <h2 style="background-color:gray;color:ghostwhite">Apellido del alumno</h2>
+    <br>
+    <h4>ABM - Televisores</h4>
+    <br>
+    <div class="row responsive-utilities-test visible-on">
+
+      <table class="table table" style="width:90%">
+        <tr>
+          <td style="width:45%">
+            <table class="table table-hover" style="background-color:cornflowerblue">
+              <tr>
+                <td><label class="col-md-2 control-label">Código</label></td>
+                <td><input type="text" id="codigo" /></td>
+              </tr>
+              <tr>
+                <td><label class="col-md-2 control-label">Marca</label></td>
+                <td><input type="text" id="marca" /></td>
+              </tr>
+              <tr>
+                <td><label class="col-md-2 control-label">Precio</label></td>
+                <td><input type="text" id="precio" /></td>
+              </tr>
+              <tr>
+                <td><label class="col-md-2 control-label">Tipo</label></td>
+                <td><input type="text" id="tipo" /></td>
+              </tr>
+              <tr>
+                <td><label class="col-md-2 control-label">Pais</label></td>
+                <td><select id="pais" style="max-width:180px;min-width:130px" > 
+                    <option>Argentina</option>
+                    <option>Brasil</option>
+                    <option>China</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td><label class="col-md-2 control-label">Foto</label></td>
+                <td><input type="file" id="foto" name="foto" ></td>
+              </tr>
+              <tr>
+                  <td colspan="2" style="text-align:center">
+                      <div style="height:100px"><img id="imgFoto" src="./BACKEND/fotos/tv_defecto.jpg" height="100px" width="300px" /></div><!-- PREVISUALIZACION -->
+                  </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <input type="button" value="Agregar" id="btn-agregar" class="btn btn-success" onclick="PrimerParcial.Manejadora.AgregarTelevisor()" />
+                  <input type="button" value="Mostrar" class="btn btn-info" onclick="PrimerParcial.Manejadora.MostrarTelevisores()" />
+                  <input type="button" value="Guardar en LocalStorage" class="btn btn-success" onclick="PrimerParcial.Manejadora.GuardarEnLocalStorage()" />
+                  <input type="button" value="Verificar y Agregar" class="btn btn-danger" onclick="PrimerParcial.Manejadora.VerificarExistencia()" />
+                  <input type="button" value="Filtrar por Pais" class="btn btn-default" onclick="..." />
+                  <input type="button" value="Cargar Paises" class="btn btn-warning" onclick="..." />
+                </td>
+              </tr>
+            </table>
+          </td>
+          <td>
+            <div class="" style="background-color:lavenderblush;">
+              <div id="divTabla">
+                tabla aqu&iacute;...
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+    </div>
+    <input type="hidden" id="hdnIdModificacion"><!-- PARA MODIFICAR -->
+    <div id="divSpinner" style="display:none;position:absolute"><img id="imgSpinner" src="./BACKEND/gif-load.gif" /></div><!-- PARA EL SPINNER -->
+  </div>
+</body>
+
+</html>
